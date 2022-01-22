@@ -13,6 +13,7 @@
   --card-gap: 30px;
   --card-item: 3;
   --main-effect: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --text-rgba: rgba(117, 117, 117, 0.5);
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -343,13 +344,19 @@ textarea {
 
   font-size: 14px;
   letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
+  color: inherit;
   transition: border-color var(--main-effect);
+}
+.modal-comment::placeholder {
+  color: var(--text-rgba);
 }
 
 .modal-label:focus-within > .modal-input,
 .modal-label:focus-within > .modal-form-icon,
-.modal-label:focus-within > .modal-comment {
+.modal-label:focus-within > .modal-comment,
+.modal-label:hover > .modal-input,
+.modal-label:hover > .modal-form-icon,
+.modal-label:hover > .modal-comment {
   border-color: var(--background-accent);
   outline: transparent;
   fill: var(--background-accent);
@@ -391,6 +398,10 @@ textarea {
   border-color: var(--accent-color);
   background-color: var(--accent-color);
   fill: var(--second-priority-color);
+}
+.checkbox:hover + .checkbox-icon,
+.checkbox:focus + .checkbox-icon {
+  border: 2px solid var(--accent-color);
 }
 
 .form-button {
@@ -573,11 +584,12 @@ textarea {
   display: flex;
   align-items: baseline;
 }
-/* .footer-left {
-  margin-right: 70px;
-} */
+
 .footer-wrap-item:not(:last-child) {
   margin-right: 70px;
+}
+.footer-wrap-item:last-child {
+  margin-left: auto;
 }
 
 .footer-link {
@@ -622,9 +634,7 @@ textarea {
   fill: var(--second-priority-color);
   transition: fill var(--main-effect);
 }
-.footer-form-item {
-  margin-left: 23px;
-}
+
 .footer-form {
   width: 570px;
   display: flex;
@@ -648,20 +658,13 @@ textarea {
   transition: border-color var(--main-effect), outline var(--main-effect);
 }
 
-.footer-label {
-  position: absolute;
-  top: 50%;
-  left: 16px;
-  transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0, 6);
-}
-
 .footer-input:focus + .footer-label {
   transform: translateY(-50px);
   color: transparent;
 }
-.footer-input:focus {
-  border-color: rgba(255, 255, 255, 0.5);
+.footer-input:focus,
+.footer-input:hover {
+  border-color: var(--accent-color);
   outline: transparent;
 }
 
