@@ -375,6 +375,7 @@ textarea {
   -moz-appearance: none;
   appearance: none;
 } */
+
 .checkbox-icon {
   display: inline-block;
   background-color: transparent;
@@ -384,6 +385,7 @@ textarea {
   margin-right: 8px;
   transition: fill var(--main-effect), background-color var(--main-effect),
     border-color var(--main-effect);
+  cursor: pointer;
 }
 .checkbox:checked + .checkbox-icon {
   border-color: var(--accent-color);
